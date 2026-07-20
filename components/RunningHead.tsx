@@ -27,8 +27,12 @@ export function RunningHead({ sections }: { sections: Section[] }) {
     return () => observer.disconnect();
   }, [sections]);
 
-  const active = sections[activeIndex];
-  const folio = String(activeIndex + 1).padStart(2, "0");
+  if (sections.length === 0) return null;
+
+  const clampedIndex = Math.min(Math.max(activeIndex, 0), sections.length - 1);
+  const active = sections[clampedIndex] as Section;
+
+  const folio = String(clampedIndex + 1).padStart(2, "0");
   const total = String(sections.length).padStart(2, "0");
 
   return (

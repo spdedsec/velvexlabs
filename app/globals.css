@@ -1,0 +1,77 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    color-scheme: light;
+    --color-paper: 242 237 228;
+    --color-ink: 31 27 22;
+    --color-ink-muted: 105 100 94;
+    --color-rule: 201 190 168;
+    --color-walnut: 107 81 66;
+    --color-walnut-light: 138 107 88;
+    --color-walnut-dark: 78 59 48;
+    --color-sage: 100 107 84;
+    --color-sage-muted: 124 132 113;
+  }
+
+  .dark {
+    color-scheme: dark;
+    --color-paper: 22 19 15;
+    --color-ink: 237 230 216;
+    --color-ink-muted: 167 156 140;
+    --color-rule: 58 50 41;
+    --color-walnut: 217 169 129;
+    --color-walnut-light: 230 190 155;
+    --color-walnut-dark: 201 155 125;
+    --color-sage: 168 175 142;
+    --color-sage-muted: 140 148 120;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-paper text-ink font-body text-body antialiased transition-colors duration-300;
+  }
+
+  ::selection {
+    @apply bg-walnut/20 text-ink;
+  }
+
+  /* Visible, deliberate focus states — never remove outline without replacing it. */
+  :focus-visible {
+    outline: 2px solid theme("colors.walnut.DEFAULT");
+    outline-offset: 3px;
+    border-radius: 2px;
+  }
+
+  h1, h2, h3 {
+    @apply font-display;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+    *, *::before, *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
+}
+
+@layer components {
+  /* Running head — the site's signature wayfinding device, styled like a book's margin folio. */
+  .running-head {
+    @apply font-mono text-caption uppercase tracking-wider text-ink-muted;
+  }
+
+  .rule {
+    @apply border-rule;
+  }
+}

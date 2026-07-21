@@ -49,13 +49,21 @@ export default function PricingPage() {
                       ))}
                     </ul>
                   </div>
-                  <p className="font-mono text-caption uppercase tracking-wider text-walnut lg:text-right">
-                    Starting at
-                    <br />
-                    <span className="text-lg normal-case tracking-normal">
-                      {tier.startingAt}
-                    </span>
-                  </p>
+                  <div className="flex flex-row items-center justify-between gap-4 lg:flex-col lg:items-end lg:justify-start lg:gap-3">
+                    <p className="font-mono text-caption uppercase tracking-wider text-walnut lg:text-right">
+                      Starting at
+                      <br />
+                      <span className="text-lg normal-case tracking-normal text-ink">
+                        {tier.startingAt}
+                      </span>
+                    </p>
+                    <Link
+                      href={`/contact?service=${encodeURIComponent(tier.name)}`}
+                      className="inline-flex items-center justify-center border border-ink px-4 py-2 font-mono text-caption uppercase tracking-wider text-ink transition-colors duration-200 hover:bg-ink hover:text-paper"
+                    >
+                      Enquire
+                    </Link>
+                  </div>
                 </div>
               ))}
             </div>

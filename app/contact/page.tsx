@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { Suspense } from "react";
 import {
   SOCIAL_LINKS,
   CONTACT_EMAIL,
@@ -24,7 +25,9 @@ export default function ContactPage() {
       <p className="mt-6 max-w-prose text-body text-ink/70">{AVAILABILITY_NOTE}</p>
 
       <div className="mt-16 grid gap-16 lg:grid-cols-[1fr_18rem]">
-        <ContactForm />
+        <Suspense fallback={null}>
+          <ContactForm />
+        </Suspense>
 
         <aside className="space-y-10 border-t border-rule pt-10 lg:border-t-0 lg:border-l lg:pl-10 lg:pt-0">
           <div>

@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, type FormEvent } from "react";
+import { useSearchParams } from "next/navigation";
 
 const PROJECT_TYPES = [
   "Branding",
@@ -10,9 +11,25 @@ const PROJECT_TYPES = [
   "Something else",
 ];
 
+const SERVICE_TO_PROJECT_TYPE: Record<string, string> = {
+  "Brand identity": "Branding",
+  "Brand strategy + identity": "Branding",
+  "Landing page": "Website design & development",
+  "Business or portfolio website": "Website design & development",
+  "E-commerce": "E-commerce",
+  "Custom web application": "Custom web application",
+  "Performance & SEO audit": "Something else",
+  "Ongoing maintenance": "Something else",
+};
+
 type Status = "idle" | "submitting" | "success" | "error";
 
 export function ContactForm() {
+  const searchParams = useSearchParams();
+  const service = searchParams.get("service");
+  const projectTypeDefault = service ? SERVICE_TO_PROJECT_TYPE[service] ?? "" : "";
+  const messageDefault = service ? `I'm interested in: ${service}\n\n` : "";
+
   const [status, setStatus] = useState<Status>("idle");
   const [errorMessage, setErrorMessage] = useState("");
 
@@ -109,7 +126,7 @@ export function ContactForm() {
           id="projectType"
           name="projectType"
           required
-          defaultValue=""
+          defaultValue={projectTypeDefault}
           className="mt-2 w-full border-b border-rule bg-transparent py-2 text-body text-ink outline-none transition-colors duration-200 focus:border-walnut"
         >
           <option value="" disabled>
@@ -132,6 +149,7 @@ export function ContactForm() {
           name="message"
           rows={5}
           required
+          defaultValue={messageDefault}
           className="mt-2 w-full resize-none border-b border-rule bg-transparent py-2 text-body text-ink outline-none transition-colors duration-200 focus:border-walnut"
         />
       </div>

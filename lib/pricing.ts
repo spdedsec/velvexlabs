@@ -3,6 +3,7 @@ export type PricingTier = {
   startingAt: string;
   description: string;
   includes: string[];
+  slug: string;
 };
 
 export type PricingGroup = {
@@ -16,6 +17,7 @@ export const PRICING_GROUPS: PricingGroup[] = [
     tiers: [
       {
         name: "Brand identity",
+        slug: "brand-identity",
         startingAt: "$6,500",
         description:
           "A complete visual system for a business that needs to look credible now, not eventually.",
@@ -28,6 +30,7 @@ export const PRICING_GROUPS: PricingGroup[] = [
       },
       {
         name: "Brand strategy + identity",
+        slug: "brand-strategy-identity",
         startingAt: "$18,000",
         description:
           "For a rebrand where positioning is still an open question, not just the visuals.",
@@ -45,12 +48,14 @@ export const PRICING_GROUPS: PricingGroup[] = [
     tiers: [
       {
         name: "Landing page",
+        slug: "landing-page",
         startingAt: "$3,200",
         description: "One focused page, built around a single decision.",
         includes: ["Single-page design and build", "Copywriting support", "Mobile-first responsive build"],
       },
       {
         name: "Business or portfolio website",
+        slug: "business-website",
         startingAt: "$9,500",
         description: "A custom multi-page site — not a theme with your logo dropped in.",
         includes: [
@@ -62,6 +67,7 @@ export const PRICING_GROUPS: PricingGroup[] = [
       },
       {
         name: "E-commerce",
+        slug: "ecommerce",
         startingAt: "$16,000",
         description: "A storefront designed around your actual product, not a generic template.",
         includes: [
@@ -73,6 +79,7 @@ export const PRICING_GROUPS: PricingGroup[] = [
       },
       {
         name: "Custom web application",
+        slug: "custom-web-app",
         startingAt: "$24,000",
         description: "Purpose-built software for a specific workflow, not an adapted template.",
         includes: [
@@ -89,12 +96,14 @@ export const PRICING_GROUPS: PricingGroup[] = [
     tiers: [
       {
         name: "Performance & SEO audit",
+        slug: "performance-seo-audit",
         startingAt: "$2,400",
         description: "A concrete, prioritized list of what's actually slowing a site down or hiding it from search.",
         includes: ["Core Web Vitals review", "Technical SEO audit", "Prioritized fix list with estimates"],
       },
       {
         name: "Ongoing maintenance",
+        slug: "maintenance",
         startingAt: "$650/month",
         description: "Ongoing care after launch — updates, monitoring, and small changes without a new project each time.",
         includes: ["Security and dependency updates", "Uptime monitoring", "A monthly bank of small change requests"],

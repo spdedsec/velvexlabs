@@ -2,9 +2,9 @@ import { NextResponse } from "next/server";
 import { Resend } from "resend";
 import { CONTACT_DESTINATION_EMAIL } from "@/lib/contact";
 
-const resend = new Resend(process.env.RESEND_API_KEY);
-
 const EMAIL_PATTERN = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+export const dynamic = "force-dynamic";
 
 export async function POST(request: Request) {
   let body: {
@@ -55,6 +55,7 @@ export async function POST(request: Request) {
   }
 
   try {
+    const resend = new Resend(process.env.RESEND_API_KEY);
     await resend.emails.send({
       // Uses Resend's shared testing domain by default, which works
       // immediately with just an API key. Once velvexlabs.com is verified

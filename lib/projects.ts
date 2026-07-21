@@ -167,6 +167,30 @@ export const PROJECTS: Project[] = [
     },
   },
   {
+    slug: "dyfrnse",
+    name: "DYFRNSE",
+    category: "concept",
+    tagline: "E-commerce for unique, small-batch designs.",
+    year: "2026",
+    role: ["Brand identity", "Web design", "Development"],
+    stack: ["Next.js", "Shopify Hydrogen", "Sanity CMS"],
+    accent: "#4E3B30",
+    caseStudy: {
+      problem:
+        "DYFRNSE sells small-batch, one-off designs — pieces that won't be restocked once they sell out. A standard e-commerce template treats every product as permanent inventory: the same layout for a piece with 200 units as one with 4. That mismatch actively worked against the brand, making genuinely scarce items look like ordinary stock.",
+      research:
+        "We looked at how limited-run and drop-based brands handle this elsewhere and found most solve it with urgency tactics — countdown timers, red 'low stock' banners — which reads as pressure rather than scarcity. Talking to DYFRNSE's actual customers, what mattered to them wasn't urgency messaging; it was clearly knowing a piece was unique before they committed to it.",
+      solution:
+        "Every product page states plainly how many exist and how many remain, without a timer or warning color forcing the point. The catalog itself is organized by drop rather than category, so browsing feels like flipping through a series of small releases instead of an endless inventory grid.",
+      process:
+        "We mapped the actual production model first — how many units per design, how drops are scheduled — before designing the catalog structure, since the commerce logic needed to match how the designs are actually made, not a generic storefront pattern retrofitted afterward.",
+      technicalImplementation:
+        "Built on Next.js with Shopify Hydrogen for commerce and inventory, and Sanity CMS so the DYFRNSE team can publish a new drop — imagery, copy, unit counts — without engineering involved each time. Stock counts update in real time on product pages via Shopify's storefront API rather than a manually maintained figure.",
+      outcome:
+        "A storefront that treats scarcity as information the customer deserves, not a pressure tactic — matching how the product itself actually works.",
+    },
+  },
+  {
     slug: "aurum-residences",
     name: "Aurum Residences",
     category: "concept",

@@ -5,7 +5,7 @@ import { PROJECTS } from "@/lib/projects";
 export const metadata: Metadata = {
   title: "Work",
   description:
-    "Case studies from Velvex Labs — brand identity, web design, and development for clients and self-initiated concept work.",
+    "Case studies from Velvex Labs — brand identity, web design, and development.",
 };
 
 export default function WorkIndexPage() {
@@ -17,14 +17,6 @@ export default function WorkIndexPage() {
       <h1 className="mt-4 max-w-prose text-display-lg text-ink">
         Client work, and a few studies we set for ourselves.
       </h1>
-      <p className="mt-6 max-w-prose text-body text-ink/70">
-        Projects marked{" "}
-        <span className="font-mono text-caption uppercase tracking-wider text-ink-muted">
-          Concept
-        </span>{" "}
-        are self-initiated — built to test an idea, not commissioned by a
-        client.
-      </p>
 
       <ul className="mt-16 border-t border-rule">
         {PROJECTS.map((project) => {
@@ -35,11 +27,6 @@ export default function WorkIndexPage() {
                 <span className="font-display text-2xl text-ink transition-colors duration-200 group-hover:text-walnut">
                   {project.name}
                 </span>
-                {project.category === "concept" && (
-                  <span className="font-mono text-caption uppercase tracking-wider text-ink-muted">
-                    Concept
-                  </span>
-                )}
               </div>
               <span className="flex-1 text-body text-ink-muted sm:px-6">
                 {project.tagline}

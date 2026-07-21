@@ -18,7 +18,6 @@ export function CaseStudyTemplate({ project }: { project: Project }) {
     <article>
       <header className="mx-auto max-w-4xl px-6 pb-16 pt-16 lg:px-0 lg:pt-24">
         <p className="font-mono text-caption uppercase tracking-wider text-sage">
-          {project.category === "concept" ? "Concept" : "Client work"} —{" "}
           {project.year}
         </p>
         <h1 className="mt-4 text-display-lg text-ink">{project.name}</h1>

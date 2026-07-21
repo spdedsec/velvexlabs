@@ -45,12 +45,18 @@ export default function ServicesPage() {
         ))}
       </div>
 
-      <div className="mt-8 border-t border-rule pt-12">
+      <div className="mt-8 flex flex-wrap items-center gap-6 border-t border-rule pt-12">
         <Link
           href="/contact"
           className="inline-flex items-center border border-ink px-6 py-3 font-mono text-caption uppercase tracking-wider text-ink transition-colors duration-200 hover:bg-ink hover:text-paper"
         >
           Discuss a project
+        </Link>
+        <Link
+          href="/pricing"
+          className="font-mono text-caption uppercase tracking-wider text-ink-muted underline decoration-rule underline-offset-4 transition-colors duration-200 hover:text-walnut hover:decoration-walnut"
+        >
+          See pricing
         </Link>
       </div>
     </main>

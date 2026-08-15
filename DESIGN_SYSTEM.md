@@ -81,11 +81,11 @@ Next: Milestone 5 — Journal (blog system) and Contact page.
   Shipped with three full sample posts (not placeholders — real ~5-6
   paragraph pieces) so the system isn't empty on launch. Add real posts by
   extending the `JOURNAL_POSTS` array; the template handles the rest.
-- Contact: form is functional client-side state only — `ContactForm.tsx`
-  has a comment marking exactly where to wire a real backend (API route or
-  a service like Resend/Formspree) before launch. Email, socials, and
-  availability copy in `lib/contact.ts` are placeholder values and need
-  real ones. FAQ uses native `<details>/<summary>` — accessible with zero
+- Contact: form is wired through `/api/contact` and sends inquiries via Resend.
+  It requires `RESEND_API_KEY` and a verified `RESEND_FROM_EMAIL` in the
+  deployment environment; submissions are delivered to the destination in
+  `lib/contact.ts`. Email and domain references are centralized in the same
+  file, while socials and availability copy remain editable business content. FAQ uses native `<details>/<summary>` — accessible with zero
   JS rather than a custom accordion component.
 
 Next: Milestone 6 — 404, Privacy Policy, Terms pages (the remaining pages
@@ -150,8 +150,8 @@ sweep).
 submissions to `spdedsec@hotmail.com` via Resend. Requires a
 `RESEND_API_KEY` environment variable (see `.env.example`) — get one free
 at resend.com. Works immediately using Resend's shared testing domain;
-switch the `from` address in the route once velvexlabs.com is verified in
-Resend for proper deliverability. Includes a honeypot field against spam
+set `RESEND_FROM_EMAIL` to a sender on `velvexlabs.in` once that domain is
+verified in Resend for proper deliverability. Includes a honeypot field against spam
 and real server-side validation.
 
 **2. Dark mode — fixed.** Converted every color token to CSS variables

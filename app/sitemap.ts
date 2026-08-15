@@ -2,7 +2,7 @@ import type { MetadataRoute } from "next";
 import { PROJECTS } from "@/lib/projects";
 import { JOURNAL_POSTS } from "@/lib/journal";
 
-const BASE_URL = "https://velvexlabs.com";
+const BASE_URL = "https://velvexlabs.in";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const staticRoutes = [

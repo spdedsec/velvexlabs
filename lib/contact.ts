@@ -4,7 +4,7 @@ export const SOCIAL_LINKS = [
   { label: "X", href: "https://x.com/velvexlabs" },
 ];
 
-export const CONTACT_EMAIL = "hello@velvexlabs.com";
+export const CONTACT_EMAIL = "hello@velvexlabs.in";
 export const CONTACT_DESTINATION_EMAIL = "spdedsec@hotmail.com";
 
 export const AVAILABILITY_NOTE =

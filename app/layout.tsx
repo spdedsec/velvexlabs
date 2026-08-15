@@ -28,7 +28,7 @@ const plexMono = IBM_Plex_Mono({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://velvexlabs.com"),
+  metadataBase: new URL("https://velvexlabs.in"),
   title: {
     default: "Velvex Labs — Design and engineering, one discipline",
     template: "%s — Velvex Labs",
@@ -58,7 +58,7 @@ const organizationJsonLd = {
   "@context": "https://schema.org",
   "@type": "Organization",
   name: "Velvex Labs",
-  url: "https://velvexlabs.com",
+  url: "https://velvexlabs.in",
   description:
     "A studio that designs and develops digital products — branding, web design, and development treated as one discipline.",
 };

@@ -2,6 +2,9 @@ import type { Metadata } from "next";
 import { Fraunces, Instrument_Sans, IBM_Plex_Mono } from "next/font/google";
 import { SiteHeader } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
+import { SmoothScroll } from "@/components/SmoothScroll";
+import { MotionCursor } from "@/components/MotionCursor";
+import { PageTransition } from "@/components/PageTransition";
 import "./globals.css";
 
 const fraunces = Fraunces({
@@ -84,6 +87,9 @@ export default function RootLayout({
           // eslint-disable-next-line react/no-danger
           dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationJsonLd) }}
         />
+        <SmoothScroll />
+        <MotionCursor />
+        <PageTransition />
         <SiteHeader />
         {children}
         <SiteFooter />

@@ -1,0 +1,24 @@
+# dependencies
+node_modules/
+.pnpm-store/
+
+# Next.js
+.next/
+out/
+
+# local env files
+.env*
+!.env.example
+
+# testing and tooling
+coverage/
+playwright-report/
+test-results/
+
+# OS/editor
+.DS_Store
+*.swp
+.vscode/
+
+# local notes
+validation_notes.md
